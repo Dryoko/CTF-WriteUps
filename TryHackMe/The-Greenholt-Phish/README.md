@@ -137,9 +137,9 @@ Visible directement en bas de l'email dans Thunderbird.
 
 > **Réponse : `SWT_#09674321____PDF__.CAB`**
 
-![PJ_corps_du_mail](screenshots/09_attachment_name.png)
-
 > **Note :** Le nom tente de faire croire à un fichier PDF. L'extension `.CAB` (Cabinet, archive Windows) est un premier signal d'alarme.
+
+![PJ_corps_du_mail](screenshots/09_attachment_name.png)
 
 ---
 
