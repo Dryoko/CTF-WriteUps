@@ -39,6 +39,8 @@ L'information est directement visible dans le corps de l'email, sans aucune mani
 
 > **Réponse : `09674321`**
 
+![Vue générale de l'email](screenshots/01_email_overview.png)
+
 ---
 
 ### Question 2 — Qui est l'expéditeur de l'email ?
@@ -46,6 +48,8 @@ L'information est directement visible dans le corps de l'email, sans aucune mani
 L'information se trouve dans le header de l'email, dans le champ **From**.
 
 > **Réponse : `Mr. James Jackson`**
+
+![Header complet de l'email](screenshots/02_email_header_full.png)
 
 ---
 
@@ -55,6 +59,8 @@ Toujours dans le header, à droite du nom de l'expéditeur.
 
 > **Réponse : `info@mutawamarine.com`**
 
+![Add_mail_expediteur](screenshots/03_replyto_field.png)
+
 ---
 
 ### Question 4 — Quelle adresse email recevra la réponse à cet email ?
@@ -62,6 +68,8 @@ Toujours dans le header, à droite du nom de l'expéditeur.
 Dans le header, le champ **Reply-To** est distinct du champ **From** — premier indicateur de phishing : l'expéditeur affiché et l'adresse de réponse sont différents.
 
 > **Réponse : `info.mutawamarine@mail.com`**
+
+![Champ Reply-To suspect](screenshots/04_message_header_analyzer.png)
 
 ---
 
@@ -75,6 +83,8 @@ Dans le header, le champ **Reply-To** est distinct du champ **From** — premier
 
 > **Réponse : `192.119.71.157`**
 
+![IP d'origine dans Received headers](screenshots/05_googleadmintoolbox.png)
+
 ---
 
 ### Question 6 — Quel est le nom de l'organisation associée à l'IP d'origine ?
@@ -82,6 +92,8 @@ Dans le header, le champ **Reply-To** est distinct du champ **From** — premier
 Recherche de l'IP `192.119.71.157` sur **ipinfo.io**. L'ASN (Autonomous System Number) et l'organisation sont affichés en première ligne.
 
 > **Réponse : `Hostwinds LLC`**
+
+![ASN Hostwinds sur ipinfo.io](screenshots/06_ipinfo_asn.png)
 
 ---
 
@@ -115,6 +127,8 @@ DMARC (Domain-based Message Authentication, Reporting & Conformance) définit la
 
 > **Réponse : `v=DMARC1; p=quarantine; fo=1`**
 
+![DMARC Record Lookup sur MXToolbox](screenshots/08_mxtoolbox_dmarc.png)
+
 ---
 
 ### Question 9 — Quel est le nom de la pièce jointe ?
@@ -122,6 +136,8 @@ DMARC (Domain-based Message Authentication, Reporting & Conformance) définit la
 Visible directement en bas de l'email dans Thunderbird.
 
 > **Réponse : `SWT_#09674321____PDF__.CAB`**
+
+![PJ_corps_du_mail](screenshots/09_attachment_name.png)
 
 > **Note :** Le nom tente de faire croire à un fichier PDF. L'extension `.CAB` (Cabinet, archive Windows) est un premier signal d'alarme.
 
@@ -139,6 +155,8 @@ Le hash est ensuite recherché sur **Talos Intelligence** pour vérification de 
 
 > **Réponse : `2e91c533615a9bb8929ac4bb76707b2444597ce063d84a4b33525e25074fff3f`**
 
+![Commande sha256sum en CLI](screenshots/10_sha256sum_talos.png)
+
 ---
 
 ### Question 11 — Quelle est la taille de la pièce jointe ?
@@ -147,6 +165,8 @@ Le hash est ensuite recherché sur **Talos Intelligence** pour vérification de 
 
 > **Réponse : `400.26 KB`**
 
+![Taille du fichier sur VirusTotal](screenshots/11_virustotal_filesize.png)
+
 ---
 
 ### Question 12 — Quelle est la vraie extension du fichier ?
@@ -154,6 +174,8 @@ Le hash est ensuite recherché sur **Talos Intelligence** pour vérification de 
 Malgré le nom `...PDF__.CAB`, l'analyse sur VirusTotal et Talos révèle que le fichier est en réalité une **archive RAR** — technique classique de dissimulation de malware.
 
 > **Réponse : `.RAR`**
+
+![Extension du fichier sur VirusTotal](screenshots/11_virustotal_filesize.png)
 
 ---
 
