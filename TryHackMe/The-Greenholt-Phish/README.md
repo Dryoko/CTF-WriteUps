@@ -104,6 +104,7 @@ dig TXT mutawamarine.com
 > **Réponse : `v=spf1 include:spf.protection.outlook.com -all`**
 
 ![SPF Record Lookup sur MXToolbox](screenshots/07_mxtoolbox_spf.png)
+
 ---
 
 ### Question 8 — Quel est l'enregistrement DMARC pour le domaine Return-Path ?
