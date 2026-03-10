@@ -59,7 +59,7 @@ Toujours dans le header, à droite du nom de l'expéditeur.
 
 > **Réponse : `info@mutawamarine.com`**
 
-![Add_mail_expediteur](screenshots/03_replyto_field.png)
+![Adresse Mail Expediteur](screenshots/03_reply_to_field.png)
 
 ---
 
