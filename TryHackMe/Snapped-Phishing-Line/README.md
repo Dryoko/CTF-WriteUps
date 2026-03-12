@@ -36,7 +36,7 @@ As an IT department employee of SwiftSpend Financial, several colleagues reporte
 
 ## 🔍 Step-by-Step Analysis
 
-### Question 1 — Who received an email attachment containing a PDF?
+### Question 1 — Who is the individual who received an email attachment containing a PDF?
 
 The `phish-emails` folder contains several emails. Each one was opened and inspected for attachments. The email titled **"Quote for services rendered: processed on June 29, 2020, 10:01:32 AM"** was the only one containing a PDF attachment.
 
@@ -51,7 +51,7 @@ The `phish-emails` folder contains several emails. Each one was opened and inspe
 
 ---
 
-### Question 2 — What email address did the adversary use to send the phishing emails?
+### Question 2 — What email address was used by the adversary to send the phishing emails?
 
 The sender's address is visible in the **From** field of the email headers.
 
@@ -66,7 +66,7 @@ The sender's address is visible in the **From** field of the email headers.
 
 ---
 
-### Question 3 — What is the redirection URL to the phishing page for Zoe Duncan? (defanged format)
+### Question 3 — What is the redirection URL to the phishing page for the individual Zoe Duncan? (defanged format)
 
 Zoe Duncan's email contains an HTML attachment. 
 
@@ -190,9 +190,7 @@ In a PHP phishing kit, the credential collection email is located in the file th
 grep -r "mail(" .
 ```
 
-This immediately identifies `submit.php` as the active collector and reveals the real destination address.
-
-> **SOC Lesson:** Always distinguish between the *sender* address (the `From:` field, often fake) and the *recipient* address (the `$to` variable inside `mail()`) — only the latter belongs to the attacker.
+This immediately identifies `submit.php` and `resubmit.php` as the active collector and reveals the real destination address.
 
 > **Answer: `m3npat@yandex.com`**
 
