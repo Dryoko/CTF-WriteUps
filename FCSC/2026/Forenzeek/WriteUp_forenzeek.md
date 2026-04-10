@@ -42,7 +42,7 @@ head -15 forenzeek.csv
 
 Le fichier est un `conn.log` Zeek au format TSV (~100 000 connexions) avec les champs suivants : `ts`, `uid`, `id.orig_h`, `id.orig_p`, `id.resp_h`, `id.resp_p`, `bytes`. La machine victime est `192.168.1.42`.
 
-![Structure du fichier Zeek](screenshots/01_structure_fichier.png)
+![Structure du fichier Zeek](screenshots/01_stucture_fichier.png)
 
 ---
 
